@@ -7,14 +7,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card *ngIf="user">
+<ion-content class="contenido">
+  <ion-card *ngIf="user" class="contenido-card">
     <ion-card-header>
       <ion-card-title>{{ user.name.first }} {{ user.name.last }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <img [src]="user.picture.large" alt="User Image">
-      <div>
+      <div class="detalles">
         <ion-label>Email: {{ user.email }}</ion-label>
         <br>
         <ion-label>Phone: {{ user.phone }}</ion-label>
@@ -22,13 +22,8 @@
         <ion-label>Pais: {{ user.location.country }}</ion-label>
         <br>
         <ion-label>Ciudad: {{ user.location.city }}</ion-label>
-        <br>
-        
+        <br>        
       </div>
-      
-      <!-- Mostrar detalles adicionales -->
-      
-      <!-- Otras propiedades adicionales -->
     </ion-card-content>
   </ion-card>
 </ion-content>
