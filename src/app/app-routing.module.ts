@@ -46,6 +46,21 @@ const routes: Routes = [
     loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule),
     canActivate: [NoIngresadoGuard]
   },
+  {
+    path: 'listaconductores',
+    loadChildren: () => import('./listaconductores/listaconductores.module').then( m => m.ListaconductoresPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
+    path: 'user-detail',
+    loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule),
+    canActivate: [IngresadoGuard]
+  },
+
+  
+
+  
+  
 ];
 
 @NgModule({

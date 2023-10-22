@@ -11,6 +11,9 @@
     <br>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     <ion-button [routerLink]="['/noauto']">Viajar con Te Llevo</ion-button>
+    <br>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <ion-button [routerLink]="['/listaconductores']">Lista Conductores</ion-button>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </ion-content>
   <ion-button  (click)="cerrar()" >Cerrar Sesión</ion-button>
@@ -28,18 +31,10 @@
     <h1 style="text-align:center" >Bienvenido Estudiante {{ usuario.nombre }}</h1>
 
     
-    <ion-card align="center">
-      <img src="https://cdn.discordapp.com/attachments/1149123407200399461/1149138895435485234/hqdefault.jpg">
-    </ion-card>
-    <h1 style="text-align:center">empleado del mes</h1>
-    <ion-card>
-      <h1 style="text-align:center">isrrael naranjo</h1>
-      <ion-card align="center">
-          <img src="https://cdn.discordapp.com/attachments/1149123407200399461/1149164456182550589/1-1.png">
-          <h1 style="text-align:center">se busca para entregarle un premio </h1>
-      </ion-card>
+  <div align="center">
+    <img src="assets/img/pnglogo.png" >
+  </div>
       
-    </ion-card>
      
   </ion-content>
 </div>
