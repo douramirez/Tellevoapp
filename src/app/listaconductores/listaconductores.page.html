@@ -2,7 +2,7 @@
   <ion-toolbar color="secondary">
     <ion-title>Lista Conductores</ion-title>
     <ion-button slot="start" color="secondary">
-      <ion-back-button></ion-back-button>
+      <ion-back-button>Atras</ion-back-button>
       </ion-button>
   </ion-toolbar>
 </ion-header>
@@ -18,15 +18,16 @@
   <ion-list>
     <ion-item *ngFor="let user of users" class="item">
       <ion-card style="margin-bottom: 10px;" class="lista">
-        <ion-card-content>
+        <ion-card-content class="cardconductores">
           <ion-avatar slot="start">
             <img [src]="user.picture.large" alt="User Image">
           </ion-avatar>
-          <ion-label>
+          <ion-label class="descripcion">
             <h2>{{ user.name.first }} {{ user.name.last }}</h2>
-            <p>{{ user.email }}</p>
+            <p class="correo">{{ user.email }}</p>
           </ion-label>
-          <ion-button expand="block" (click)="showUserDetails(user)">Más Información</ion-button>
+          <div></div>
+          <ion-button (click)="showUserDetails(user)" class="botondetalle">Más Información</ion-button>
         </ion-card-content>
       </ion-card>
     </ion-item>
