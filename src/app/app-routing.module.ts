@@ -56,6 +56,11 @@ const routes: Routes = [
     loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule),
     canActivate: [IngresadoGuard]
   },
+  {
+    path: 'maps',
+    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+  },
+  
 
   
 

@@ -1,0 +1,46 @@
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Maps</ion-title>
+    <ion-button slot="start" color="secondary">
+      <ion-back-button>Atras</ion-back-button>
+      </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img src="assets/img/pnglogoCond.png" alt="img_logo" class="img_logo"/>
+    <!-- MAPA -->
+    <div id="map"></div>
+  <ion-card>
+    <h3>¿A dónde vamos, ?</h3>
+    <ion-card-content>
+      <form >
+        <ion-item >
+          <ion-label>Punto inicial: Duoc UC Puente Alto</ion-label> <!-- DIRECCIÓN ORIGEN -->
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start" >¿A dónde vas?</ion-label> <!-- DIRECCIÓN SALIDA -->
+          <br>
+          <input slot="end" placeholder="Ingrese dirección" id="autocomplete" >
+        </ion-item>
+        <ion-item>
+          <ion-label slot="start">Total viaje</ion-label> <!-- VALOR DEL VIAJE -->
+          <ion-input placeholder="Ingrese un valor, mínimo 1000" >$</ion-input>
+        </ion-item>
+        <ion-button>CALCULAR RUTA</ion-button>
+      </form>
+    </ion-card-content>
+    <ion-card>
+      <ion-card-content>
+        <ion-button >CREAR VIAJE</ion-button>
+        <ion-button >CANCELAR</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+</ion-content>
+
+
+
+

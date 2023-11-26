@@ -23,6 +23,8 @@ export class RegistroPage implements OnInit {
 
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required),
+      'apellido': new FormControl("",Validators.required),
+      'correo': new FormControl("",Validators.required),
       'contraseña': new FormControl("",Validators.required),
       'repitecontraseña': new FormControl("",Validators.required),
 
@@ -40,8 +42,8 @@ export class RegistroPage implements OnInit {
     if(this.formularioRegistro.invalid){
       console.log('El formulario es inválido');
       const alert = await this.alertController.create({
-        header: 'Te faltan datos',
-        message: 'Llena todos los campos',
+        header: 'Le faltan datos',
+        message: 'Llene todos los campos',
         buttons: ['Aceptar']
       });
   
@@ -51,6 +53,8 @@ export class RegistroPage implements OnInit {
   
     var usuario = {
       nombre: reg.nombre,
+      apellido: reg.apellido,
+      correo: reg.correo,
       contraseña: reg.contraseña
     }
     localStorage.setItem('usuario',JSON.stringify(usuario));

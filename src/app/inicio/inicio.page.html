@@ -1,13 +1,15 @@
+
+
 <ion-menu  contentId="main-content" >
   <ion-header >
     <ion-toolbar >
-      <ion-title>Bienvenido Te Llevo App</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <h1>{{usuario.nombre}}</h1>
+    <h1>{{usuario.nombre}} {{usuario.apellido}}</h1>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    <ion-button [routerLink]="['/auto']">Conducir con Te Llevo</ion-button>
+    <ion-button [routerLink]="['/maps']">Conducir con Te Llevo</ion-button>
     <br>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     <ion-button [routerLink]="['/noauto']">Viajar con Te Llevo</ion-button>
@@ -18,6 +20,8 @@
   </ion-content>
   <ion-button  (click)="cerrar()" >Cerrar Sesión</ion-button>
 </ion-menu>
+
+<!-- contenido -->
 <div class="ion-page" id="main-content">
   <ion-header >
     <ion-toolbar color="secondary">
@@ -27,14 +31,27 @@
       <ion-title>inicio</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content class="ion-padding" class="glass-content"> 
-    <h1 style="text-align:center" >Bienvenido Estudiante {{ usuario.nombre }}</h1>
-
-    
-  <div align="center">
-    <img src="assets/img/pnglogo.png" >
-  </div>
-      
-     
+  <ion-content>
+    <img src="assets/img/pnglogo.png" alt="img_logo" class="img_logo"/>
+  
+    <ion-card>
+      <ion-card-content>
+        <div >
+          <p id="p1" class="p1">Bienvenido</p>
+          <p>{{ usuario.nombre + ' ' + usuario.apellido }}</p>
+          <a ><img src="assets/img/perfilBlack.png" alt="img_perfil" class="img_perfil"/></a>
+        </div>
+        <br>
+      <p id="ulike">¿Qué te gustaría hoy?</p>
+      <br>
+      <ion-button slot="start" expand="block" >Quiero realizar un viaje</ion-button>
+      <br>
+      <ion-button slot="end" expand="block" >Quiero tomar un viaje</ion-button>
+      <ion-button slot="end" expand="block" >Historial</ion-button>
+      <br>
+      <ion-button slot="end" >Cerrar sesión</ion-button>
+  
+      </ion-card-content>
+    </ion-card>
   </ion-content>
 </div>

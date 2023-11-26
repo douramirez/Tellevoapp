@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController) { 
 
     this.formularioLogin = this.fb.group({
-      'nombre': new FormControl("",Validators.required),
+      'correo': new FormControl("",Validators.required),
       'contraseña': new FormControl("",Validators.required),
 
     });
@@ -37,7 +37,7 @@ export class LoginPage implements OnInit {
     var usuarioString = localStorage.getItem('usuario');
     if (usuarioString !== null) {
       var usuario = JSON.parse(usuarioString);
-      if (usuario.nombre == f.nombre && usuario.contraseña == f.contraseña) {
+      if (usuario.correo == f.correo && usuario.contraseña == f.contraseña) {
         console.log('Ingresado');
         localStorage.setItem('ingresado', 'true');
         this.navCtrl.navigateRoot('inicio');
