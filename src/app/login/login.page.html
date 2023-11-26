@@ -1,40 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" >
-      <ion-card >
-        <ion-card-header >
-          <ion-card-title>Iniciar Sesión</ion-card-title>
+<div class="fondo">
+  <ion-content >
+    
+      <ion-card>
+        <img src="assets/img/pnglogo.png" alt="img_logo" class="img_logo"/>
+        <ion-card-header>
+          <ion-card-subtitle >¿Preparado para viajar?</ion-card-subtitle>
+          <ion-card-title>¡Ingresa a tu cuenta!</ion-card-title>
         </ion-card-header>
-        <ion-card-content class="glass-content">
-          <form [formGroup]="formularioLogin" >
-            <ion-item>
-              <ion-label position="floating">Correo</ion-label>
-              <ion-input formControlName="nombre"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating">Contraseña</ion-label>
-              <ion-input formControlName="contraseña" type="password"></ion-input>
-            </ion-item>
+        <ion-card-content >
+          <form [formGroup]="formularioLogin">
+            
+                <ion-item>
+                  <ion-label position="floating">Correo</ion-label>
+                  <ion-input placeholder="correo" formControlName="nombre" ></ion-input>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label position="floating">Contraseña</ion-label>
+                  <ion-input placeholder="ingrese contraseña" formControlName="contraseña" type="password" ></ion-input>
+                </ion-item>
+                <br>
+                <ion-button expand="block" (click)="ingresar()">Ingresar</ion-button>
+            
           </form>
-          <br>
-          <ion-button (click)="ingresar()">
-            Ingresar
-          </ion-button>
+         <div id="cardFooter">
+          <ion-card-subtitle>¿Eres usuario nuevo?</ion-card-subtitle>
+          <p>Ingresa tu cuenta de DuocUC y únete a la plataforma de viajes exclusiva de la institución.</p>
+          <ion-button [routerLink]="['/registro']">Registrarse</ion-button>
+
+         </div>
         </ion-card-content>
       </ion-card>
-</ion-content>
-<ion-footer>
-  <ion-toolbar color="secondary">
-    <ion-buttons slot="end">
-      <ion-button [routerLink]="['/registro']">Registrarse</ion-button>
-      
-    </ion-buttons>
-    <ion-buttons slot="start">
-      <ion-button [routerLink]="['/contra']">¿Has olvidado tu contraseña?</ion-button>
-  </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
+  </ion-content>
+</div>
+
+<div class="footer">
+  <ion-footer class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-button id="open-modal" expand="block">Términos de uso</ion-button>
+    </ion-toolbar>
+  </ion-footer>
+</div>
+
+

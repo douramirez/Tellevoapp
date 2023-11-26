@@ -6,6 +6,7 @@ import {
   FormBuilder
  } from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -17,7 +18,8 @@ export class RegistroPage implements OnInit {
 
   constructor(public fb: FormBuilder,
     public alertController : AlertController,
-    public navCtrl: NavController) { 
+    public navCtrl: NavController,
+    public router: Router) { 
 
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required),
@@ -55,5 +57,8 @@ export class RegistroPage implements OnInit {
 
     localStorage.setItem('ingresado', 'true');
     this.navCtrl.navigateRoot('login');
+  }
+  volverLogin(){
+    this.router.navigate(['/login']);
   }
 }

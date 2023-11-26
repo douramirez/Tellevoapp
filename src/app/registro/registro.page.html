@@ -1,11 +1,4 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
-    <ion-title>Registro</ion-title>
-    <ion-button slot="start" color="secondary">
-    <ion-back-button></ion-back-button>
-    </ion-button>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true" >
   
@@ -13,25 +6,26 @@
     <ion-card-header>
       <ion-card-title>Registrarse</ion-card-title>
     </ion-card-header>
-    <ion-card-content class="glass-content">
+    <ion-card-content>
       <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
         <ion-item>
           <ion-label position="floating">Correo</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
+          <ion-input  placeholder="ingrese correo" formControlName="nombre"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="contraseña" type="password"></ion-input>
+          <ion-input  placeholder="ingrese contraseña" formControlName="contraseña" type="password"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating">Repite la contraseña</ion-label>
-          <ion-input formControlName="repitecontraseña" type="password"></ion-input>
+          <ion-input  formControlName="repitecontraseña" type="password"></ion-input>
         </ion-item>
       </form>
       <br>
       <ion-button (click)="guardar()">
         Registrarse
       </ion-button>
+      <ion-button expand="block" style="border-style: none;"type="button" (click)="volverLogin()">Volver al login</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>
