@@ -18,11 +18,9 @@ export class InicioPage implements OnInit {
       this.usuario = JSON.parse(usuarioString);
       // Ahora puedes acceder a las propiedades específicas del objeto de usuario
       const nombre = this.usuario.nombre;
-      const contraseña = this.usuario.contraseña;
-      const repitecontraseña = this.usuario.repitecontraseña;
+      const correo = this.usuario.correo;
       console.log('Nombre del usuario:', nombre);
-      console.log('Email del usuario:', contraseña);
-      console.log('Tipo del usuario:', repitecontraseña);
+      console.log('Email del usuario:', correo);
   }
 }
 

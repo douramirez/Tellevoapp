@@ -24,14 +24,17 @@ export class RegistroPage implements OnInit {
     this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required),
       'apellido': new FormControl("",Validators.required),
-      'correo': new FormControl("",Validators.required),
+      'correo': new FormControl("",[Validators.required, Validators.email]),
       'contraseña': new FormControl("",Validators.required),
       'repitecontraseña': new FormControl("",Validators.required),
-
-    });
+    }, { validators: this.passwordsMatchValidator });
 
   }
 
+  passwordsMatchValidator(form: FormGroup) {
+    return form.get('contraseña')!.value === form.get('repitecontraseña')!.value
+      ? null : { 'mismatch': true };
+  }
 
   ngOnInit() {
   }
