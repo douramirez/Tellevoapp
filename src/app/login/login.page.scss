@@ -12,6 +12,7 @@ ion-content{
   /* Este background incluye al MODAL en la alteración de color */
   ion-card {
       border-style: ridge;
+      border-color: #ffe95a;
       --background: linear-gradient(#4c57d0, rgb(63, 141, 180), rgb(106, 147, 168));
       margin: 0 auto;
       top: 5vh;

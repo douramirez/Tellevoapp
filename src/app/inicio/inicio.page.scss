@@ -1,4 +1,11 @@
 @use '../../global.scss';
+.botonmenu{
+  --background: #ffe95a;
+  color: black; 
+}
+.colorbarra{
+  --background: #ffe95a;
+}
 
 ion-content{
   --background: linear-gradient(#4c57d0, rgb(63, 141, 180), rgb(106, 147, 168));
@@ -14,6 +21,7 @@ ion-content{
     align-items: center;
     justify-content: space-around;
     border-style: double;
+    border-color: #ffe95a;
     ion-button{
       color: black;
       margin: 10px;
@@ -23,13 +31,17 @@ ion-content{
       color: #ffffff;
       --background: #4c57d0;
     }
+    .nombreusuario{
+      text-transform: uppercase;
+    }
     p{
       font-size: x-large;
       color: #ffffff;
     }
     .p1{
-      font-size: large;
+      font-size: x-large;
       color: #ffffff;
+      text-transform: uppercase;
     }
     #ulike{
       font-size: large;

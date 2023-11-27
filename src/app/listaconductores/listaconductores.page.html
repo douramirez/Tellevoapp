@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="secondary">
     <ion-title>Lista Conductores</ion-title>
     <ion-button slot="start" color="secondary">
@@ -9,31 +9,28 @@
 
 
 <ion-content class="contenido">
-  <div align="center">
-    <img src="assets/img/pnglogoCond.png" alt="">
-  </div>
-
-  
+  <div align="center"> 
+      <ion-list>    
+        <ion-item *ngFor="let user of conductor" class="item">
+          <ion-card style="margin-bottom: 10px;" class="lista">
+            <ion-card-content class="cardconductores">
+              <ion-avatar slot="start">
+                <img [src]="user.picture.large" alt="User Image">
+              </ion-avatar>
+              <ion-label class="descripcion">
+                <h2>{{ user.name.first }} {{ user.name.last }}</h2>
+                <p class="correo">{{ user.email }}</p>
+              </ion-label>
+              <div></div>
+              <ion-button (click)="showUserDetails(user)" class="botondetalle">Más Información</ion-button>
+            </ion-card-content>
+          </ion-card>
+        </ion-item>
+      </ion-list>
     
-  <ion-list>
-    <ion-item *ngFor="let user of conductor" class="item">
-      <ion-card style="margin-bottom: 10px;" class="lista">
-        <ion-card-content class="cardconductores">
-          <ion-avatar slot="start">
-            <img [src]="user.picture.large" alt="User Image">
-          </ion-avatar>
-          <ion-label class="descripcion">
-            <h2>{{ user.name.first }} {{ user.name.last }}</h2>
-            <p class="correo">{{ user.email }}</p>
-          </ion-label>
-          <div></div>
-          <ion-button (click)="showUserDetails(user)" class="botondetalle">Más Información</ion-button>
-        </ion-card-content>
-      </ion-card>
-    </ion-item>
-  </ion-list>
-  
-  
+    
+  </div> 
+    
   
   
 </ion-content>

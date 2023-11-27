@@ -1,15 +1,13 @@
 .contenido{
-    color: aqua;
-
-    
+    color: aqua;   
 }
 .detalles{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
     font-synthesis-style: auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .contenido-card{
-    background-color: rgb(24, 152, 226);
+    --background: linear-gradient(#3847ee, rgb(63, 141, 180), rgb(106, 147, 168));
     align-items: center;    
 }

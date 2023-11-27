@@ -4,7 +4,9 @@ ion-content{
     --background: linear-gradient(#4c57d0, rgb(63, 141, 180), rgb(106, 147, 168));
     padding-bottom: 50px;
     ion-card{
-        --background: rgb(0, 0, 0);
+        --background: linear-gradient(#4c57d0, rgb(63, 141, 180), rgb(106, 147, 168));
+        border-style: ridge;
+        border-color: #ffe95a;
         height: auto;
         width: 80vw;
         margin: auto;
@@ -14,8 +16,10 @@ ion-content{
         text-align: center;
         font-weight: bold;
         ion-card-header{
-            --background: #1cc533;
+            text-transform: uppercase;
+            --background: #ffe95a;
             ion-label{
+                text-transform: uppercase;
                 font-size: large;
                 color: #03153e;
                 text-transform: uppercase;
@@ -28,6 +32,7 @@ ion-content{
             }
         }
         ion-button{
+            text-transform: uppercase;
             color: black;
             margin: 10px;
             --background: #ffe95a;
