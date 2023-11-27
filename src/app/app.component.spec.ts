@@ -1,21 +1,41 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
-
+// app.component.spec.ts
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { NavController } from '@ionic/angular';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let navCtrlSpy: jasmine.SpyObj<NavController>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    const spy = jasmine.createSpyObj('NavController', ['navigateRoot']);
+
+    TestBed.configureTestingModule({
       declarations: [AppComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    }).compileComponents();
+      providers: [
+        { provide: NavController, useValue: spy },
+      ],
+    });
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    navCtrlSpy = TestBed.inject(NavController) as jasmine.SpyObj<NavController>;
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('debería redirigir al usuario a /login si no está autenticado', () => {
+    component.setAuthenticationStatus(false);
+
+    component.ngOnInit();
+
+    expect(navCtrlSpy.navigateRoot).toHaveBeenCalledWith('/login');
   });
 
+  it('no debería redirigir si el usuario está autenticado', () => {
+    component.setAuthenticationStatus(true);
+    component.ngOnInit();
+    expect(navCtrlSpy.navigateRoot).not.toHaveBeenCalled();
+  });
+
+  // Puedes agregar más pruebas según las características y lógica específica de tu AppComponent
 });

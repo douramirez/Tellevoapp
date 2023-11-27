@@ -32,11 +32,6 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
-    path: 'noauto',
-    loadChildren: () => import('./noauto/noauto.module').then( m => m.NoautoPageModule),
-    canActivate: [IngresadoGuard]
-  },
-  {
     path: 'contra',
     loadChildren: () => import('./contra/contra.module').then( m => m.ContraPageModule),
     canActivate: [NoIngresadoGuard]

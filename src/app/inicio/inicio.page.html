@@ -15,9 +15,6 @@
     <ion-button [routerLink]="['/maps']" class="botonmenu">Conducir con Te Llevo</ion-button>
     <br>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    <ion-button [routerLink]="['/noauto']" class="botonmenu">Viajar con Te Llevo</ion-button>
-    <br>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     <ion-button [routerLink]="['/listaconductores']" class="botonmenu">Lista Conductores</ion-button>
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </ion-content>
@@ -47,8 +44,7 @@
         <br>
       <p id="ulike">¿Qué te gustaría hoy?</p>
       <br>
-      <ion-button slot="start" expand="block" >Quiero realizar un viaje</ion-button>
-      <br>
+      <ion-button slot="end" expand="block" [routerLink]="['/maps']" class="botonmenu">Conducir con Te Llevo</ion-button>
       <ion-button slot="end" expand="block" >Quiero tomar un viaje</ion-button>
       <ion-button slot="end" expand="block" >Historial</ion-button>
       <br>
