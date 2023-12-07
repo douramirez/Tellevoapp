@@ -1,21 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 declare var google : any;
+
+
 
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.page.html',
   styleUrls: ['./maps.page.scss'],
 })
+
+
 export class MapsPage implements OnInit {
+  directionsRenderer = new google.maps.DirectionsRenderer();
 
   map = null;
   geocoder = new google.maps.Geocoder();
   constructor() { }
   marker = null;
 
+  
+
   ngOnInit() {
     this.loadMap();
+    
   }
 
   loadMap() {
@@ -30,38 +38,49 @@ export class MapsPage implements OnInit {
       disableDefaultUI: true, // Desactiva la interfaz de usuario predeterminada
       zoomControl: false, // Desactiva el control de zoom
     });
-
-    // create a marker
-    const marker = new google.maps.Marker({
-      position: myLatLng,
-      map: this.map,
-      title: 'Hello World!'
-    });
-  
-    google.maps.event.addListenerOnce(this.map, 'idle', () => {
-      mapEle.classList.add('show-map');
-    });
+    
   }
 
-  addMarker() {
-    console.log('addMarker function called');
-    const address = (<HTMLInputElement>document.getElementById('autocomplete')).value;
-    
-    if (address) {
-      this.geocoder.geocode({ 'address': address }, (results:any, status:any) => {
+  
+    addMarker() {
+      console.log('addMarker function called');
+      const address = (<HTMLInputElement>document.getElementById('autocomplete')).value;
+  
+      const directionsService = new google.maps.DirectionsService();
+      const geocoder = new google.maps.Geocoder();
+  
+      // Definir el punto de inicio
+      const start = new google.maps.LatLng(-33.5151301, -70.7209969);
+  
+      if (this.directionsRenderer.getDirections()) {
+        this.directionsRenderer.setDirections(null);
+      }
+      
+  
+      // Convertir la dirección ingresada por el usuario en coordenadas
+      geocoder.geocode({ 'address': address }, (results:any, status:any) => {
         if (status == 'OK') {
-          console.log('Geocoding results:', results);
-          const marker = new google.maps.Marker({
-            map: this.map,
-            position: results[0].geometry.location
-          });
-          console.log('Marker created:', marker);
+          const end = results[0].geometry.location;
+  
+          directionsService.route(
+            {
+              origin: start,
+              destination: end,
+              travelMode: google.maps.TravelMode.DRIVING,
+            },
+            (response:any, status:any) => {
+              if (status === "OK") {
+                this.directionsRenderer.setDirections(response);
+                this.directionsRenderer.setMap(this.map);
+              } else {
+                window.alert("Directions request failed due to " + status);
+              }
+            }
+          );
         } else {
           alert('Geocode was not successful for the following reason: ' + status);
         }
       });
-    } else {
-      alert('Please enter an address');
     }
-  }
+  
 }
