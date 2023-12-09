@@ -45,8 +45,8 @@
       <p id="ulike">¿Qué te gustaría hoy?</p>
       <br>
       <ion-button slot="end" expand="block" [routerLink]="['/maps']" class="botonmenu">Conducir con Te Llevo</ion-button>
-      <ion-button slot="end" expand="block" >Quiero tomar un viaje</ion-button>
-      <ion-button slot="end" expand="block" >Historial</ion-button>
+      <ion-button [routerLink]="['/take-trip']" slot="end" expand="block" >Quiero tomar un viaje</ion-button>
+      <ion-button [routerLink]="['/historial']" slot="end" expand="block" >Historial</ion-button>
       <br>
       <ion-button (click)="cerrar()">Cerrar sesión</ion-button>
   

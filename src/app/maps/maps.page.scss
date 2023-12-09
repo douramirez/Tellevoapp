@@ -1,55 +1,54 @@
-ion-content{
+ion-content {
   --background: linear-gradient(#4c57d0, rgb(63, 141, 180), rgb(106, 147, 168));
   text-align: center;
-  p{
-      color:#ffffff;
+
+  p {
+    color: #ffffff;
   }
-  ion-button{
-      color: black;
-      margin: 4px;
-      --background: #ffe95a;
+
+  ion-button {
+    color: black;
+    margin: 4px;
+    --background: #ffe95a;
   }
+
   .img_logo {
-      width: 25%;
-      margin-top: 2px;
+    width: 25%;
+    margin-top: 2px;
+  }
+
+  #indicaciones {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    overflow-y: auto;
+    display: block;
+  }
+
+  #map {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+  }
+
+  ion-card {
+    position: absolute;
+    top: 55%;
+    left: 2.5%;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(150, 152, 12, 0.1);
+
+    h3 {
+      text-align: center;
+      color: #000000;
     }
 
-#indicaciones{
-  width: 100%;
-  height: 40%;
-  padding: 10px;
-  overflow-y: auto;
-  display: block;
-}
-
-#map {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-ion-card {
-  position: absolute;
-  top: 50%; /* Ajusta según sea necesario */
-  left: 5%; /* Ajusta según sea necesario */
-  width: 90%; /* Ajusta según sea necesario */
-  background-color: rgba(255, 255, 255, 0.8); /* Ajusta según sea necesario */
-  border-radius: 10px; /* Ajusta según sea necesario */
-  box-shadow: 0 2px 4px 0     rgba(150, 152, 12, 0.1); /* Ajusta según sea necesario */
-}
-
-ion-card h3 {
-  text-align: center;
-  color: #000000; /* Ajusta según sea necesario */
-}
-
-
-ion-card ion-button {
-  display: block;
-  width: 100%;
-  margin-top: 10px; /* Ajusta según sea necesario */
-}
-
-
-
+    ion-button {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
 }
